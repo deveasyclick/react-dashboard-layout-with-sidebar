@@ -1,4 +1,4 @@
-import MainHeader from '../../components/headers/main/Main';
+import MainHeader from '../../components/Headers/main/Main';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import MainContent from '../../components/MainContent/MainContent';
 

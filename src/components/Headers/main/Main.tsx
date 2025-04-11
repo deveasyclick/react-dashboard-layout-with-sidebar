@@ -1,11 +1,11 @@
 import { memo, useCallback, useState } from 'react';
-import Button from '../../button/Button';
+import Button from '../../Button/Button';
 import AppsDropdown from './dropdowns/AppsDropdown';
 import NotificationsDropdown from './dropdowns/NotificationsDropdown';
 import UserMenuDropdown from './dropdowns/UserMenuDropdown';
 import IconWrapper from '../../IconWrapper/IconWrapper';
 import IconInput from '../../Input/IconInput';
-import type { HeaderButtonProps, LogoProps, MainHeaderProps } from './types';
+import { HeaderButtonProps, LogoProps, MainHeaderProps } from './types';
 
 /**
  * Logo component for the main header
