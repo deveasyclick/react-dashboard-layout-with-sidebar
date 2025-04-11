@@ -1,7 +1,7 @@
-import useToggleState from '../../hooks/useToggleState';
-import Button from '../button/Button';
-import IconWrapper from '../IconWrapper/IconWrapper';
-import IconInput from '../Input/IconInput';
+import useToggleState from '../../../hooks/useToggleState';
+import Button from '../../button/Button';
+import IconWrapper from '../../IconWrapper/IconWrapper';
+import IconInput from '../../Input/IconInput';
 
 const Logo = () => (
   <a href="#" className="flex items-center justify-between mr-4">
@@ -510,7 +510,7 @@ const MainHeader = () => {
     <nav className="bg-white border-b border-gray-200 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
       <div className="flex flex-wrap justify-between items-center">
         <section className="flex justify-start items-center">
-          <Button>
+          <Button aria-controls="sidebar">
             <IconWrapper name="menu" />
             <IconWrapper name="cancel" aria-hidden="true" className="hidden" />
             <span className="sr-only">Toggle sidebar</span>
@@ -523,19 +523,26 @@ const MainHeader = () => {
             <span className="sr-only">Toggle search</span>
             <IconWrapper name="search" aria-hidden="true" />
           </Button>
-          <Button onClick={() => setShowNotifications()}>
+          <Button
+            aria-expanded={showNotifications}
+            aria-controls="notification-dropdown"
+            onClick={() => setShowNotifications()}>
             <span className="sr-only">View notifications</span>
             <IconWrapper name="bell" />
           </Button>
           <NotificationsDropdown showNotifications={showNotifications} />
-          <Button onClick={() => setShowApps()}>
+          <Button
+            aria-expanded={showApps}
+            aria-controls="apps-dropdown"
+            onClick={() => setShowApps()}>
             <span className="sr-only">View Apps</span>
             <IconWrapper name="apps" />
           </Button>
           <AppsDropdown showApps={showApps} />
           <Button
+            aria-expanded={showUserMenu}
+            aria-controls="user-menu-dropdown"
             id="user-menu-button"
-            aria-expanded="false"
             onClick={() => setShowUserMenu()}>
             <span className="sr-only">Open user menu</span>
             <img
