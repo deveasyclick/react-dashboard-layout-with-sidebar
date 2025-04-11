@@ -1,3 +1,4 @@
+import AppMenuIcon from '../components/Icons/AppMenu/AppMenu';
 import BellIcon from '../components/Icons/Bell/Bell';
 import CancelIcon from '../components/Icons/Cancel/Cancel';
 import MenuIcon from '../components/Icons/Menu/Menu';
@@ -8,4 +9,5 @@ export const Icons = {
   menu: MenuIcon,
   cancel: CancelIcon,
   bell: BellIcon,
+  apps: AppMenuIcon,
 };
