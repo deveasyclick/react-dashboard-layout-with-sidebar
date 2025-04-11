@@ -1,23 +1,18 @@
 import { memo } from 'react';
 import {
-  DropdownWrapper,
   DropdownHeader,
   DropdownFooter,
 } from '../../../../components/Dropdown';
-
-/**
- * Props for dropdown components
- */
-type DropdownProps = {
-  isOpen: boolean;
-};
+import HeaderDropdown from '../HeaderDropdown';
+import { DropdownProps } from '../types';
 
 /**
  * Notifications dropdown component
  */
-const NotificationsDropdown = memo(({ isOpen }: DropdownProps) => (
-  <DropdownWrapper
+const NotificationsDropdown = memo(({ isOpen, onClose }: DropdownProps) => (
+  <HeaderDropdown
     isOpen={isOpen}
+    onClose={onClose}
     id="notification-dropdown"
     className="max-w-sm"
     position="right">
@@ -222,7 +217,7 @@ const NotificationsDropdown = memo(({ isOpen }: DropdownProps) => (
         View all
       </div>
     </DropdownFooter>
-  </DropdownWrapper>
+  </HeaderDropdown>
 ));
 
 export default NotificationsDropdown;

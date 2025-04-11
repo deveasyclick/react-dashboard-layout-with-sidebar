@@ -1,22 +1,15 @@
 import { memo } from 'react';
-import {
-  DropdownWrapper,
-  DropdownHeader,
-} from '../../../../components/Dropdown';
-
-/**
- * Props for dropdown components
- */
-type DropdownProps = {
-  isOpen: boolean;
-};
+import { DropdownHeader } from '../../../../components/Dropdown';
+import HeaderDropdown from '../HeaderDropdown';
+import { DropdownProps } from '../types';
 
 /**
  * Apps dropdown component
  */
-const AppsDropdown = memo(({ isOpen }: DropdownProps) => (
-  <DropdownWrapper
+const AppsDropdown = memo(({ isOpen, onClose }: DropdownProps) => (
+  <HeaderDropdown
     isOpen={isOpen}
+    onClose={onClose}
     id="apps-dropdown"
     className="max-w-sm"
     position="right">
@@ -152,7 +145,7 @@ const AppsDropdown = memo(({ isOpen }: DropdownProps) => (
         <div className="text-sm text-gray-900 dark:text-white">Logout</div>
       </a>
     </div>
-  </DropdownWrapper>
+  </HeaderDropdown>
 ));
 
 export default AppsDropdown;

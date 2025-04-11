@@ -1,23 +1,15 @@
 import { memo } from 'react';
-import {
-  DropdownWrapper,
-  DropdownHeader,
-  DropdownItem,
-} from '../../../../components/Dropdown';
-
-/**
- * Props for dropdown components
- */
-type DropdownProps = {
-  isOpen: boolean;
-};
+import { DropdownHeader, DropdownItem } from '../../../../components/Dropdown';
+import HeaderDropdown from '../HeaderDropdown';
+import { DropdownProps } from '../types';
 
 /**
  * User menu dropdown component
  */
-const UserMenuDropdown = memo(({ isOpen }: DropdownProps) => (
-  <DropdownWrapper
+const UserMenuDropdown = memo(({ isOpen, onClose }: DropdownProps) => (
+  <HeaderDropdown
     isOpen={isOpen}
+    onClose={onClose}
     id="user-menu-dropdown"
     className="w-56"
     position="right">
@@ -113,7 +105,7 @@ const UserMenuDropdown = memo(({ isOpen }: DropdownProps) => (
         <DropdownItem>Sign out</DropdownItem>
       </li>
     </ul>
-  </DropdownWrapper>
+  </HeaderDropdown>
 ));
 
 export default UserMenuDropdown;
