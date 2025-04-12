@@ -1,8 +1,18 @@
-import AppMenuIcon from '../components/Icons/AppMenu/AppMenu';
-import BellIcon from '../components/Icons/Bell/Bell';
-import CancelIcon from '../components/Icons/Cancel/Cancel';
-import MenuIcon from '../components/Icons/Menu/Menu';
-import SearchIcon from '../components/Icons/Search/Search';
+import {
+  AppMenuIcon,
+  BellIcon,
+  CancelIcon,
+  MenuIcon,
+  SearchIcon,
+  SalesIcon,
+  UsersIcon,
+  InboxIcon,
+  ProfileIcon,
+  SettingsIcon,
+  ProductsIcon,
+  PricingIcon,
+  LogoutIcon,
+} from '../components/Icons';
 
 export const Icons = {
   search: SearchIcon,
@@ -10,4 +20,13 @@ export const Icons = {
   cancel: CancelIcon,
   bell: BellIcon,
   apps: AppMenuIcon,
+  // App icons
+  sales: SalesIcon,
+  users: UsersIcon,
+  inbox: InboxIcon,
+  profile: ProfileIcon,
+  settings: SettingsIcon,
+  products: ProductsIcon,
+  pricing: PricingIcon,
+  logout: LogoutIcon,
 };
