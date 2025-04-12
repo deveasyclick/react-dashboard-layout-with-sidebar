@@ -20,7 +20,7 @@ export const Icons = {
   cancel: CancelIcon,
   bell: BellIcon,
   apps: AppMenuIcon,
-  // App icons
+  // TODO: Rename the icons below
   sales: SalesIcon,
   users: UsersIcon,
   inbox: InboxIcon,
