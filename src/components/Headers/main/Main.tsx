@@ -60,7 +60,7 @@ const HeaderButton = memo(
       aria-expanded={ariaExpanded}
       aria-haspopup="true"
       onClick={onClick}
-      className={`focus:ring-2 focus:ring-gray-300 ${className}`}
+      className={className}
       id={id}>
       {children}
     </Button>
