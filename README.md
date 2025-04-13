@@ -35,8 +35,8 @@ The Alyusroh Admin Portal is a web application designed for administrators to ma
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
-- Node.js (v18.17.0 or higher)
-- npm or yarn
+- Node.js (v22.0.0 or higher, recommended v22.11.0)
+- npm (v11.0.0 or higher, recommended v11.2.0) or yarn
 
 ## Installation
 
