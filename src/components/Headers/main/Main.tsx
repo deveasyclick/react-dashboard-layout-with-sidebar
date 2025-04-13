@@ -76,6 +76,8 @@ const MainHeader = ({
   logoText,
   userPhotoSrc = 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png',
   userPhotoAlt = 'user photo',
+  userName = 'Michael Gough',
+  userEmail = 'michael@example.com',
 }: MainHeaderProps = {}) => {
   // State for tracking which dropdown is open
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -165,6 +167,8 @@ const MainHeader = ({
           <UserMenuDropdown
             isOpen={activeDropdown === 'userMenu'}
             onClose={closeDropdown}
+            userName={userName}
+            userEmail={userEmail}
           />
         </section>
       </div>

@@ -18,6 +18,9 @@ import {
   ChatBubbleIcon,
   VideoIcon,
   EyeIcon,
+  ChevronRightIcon,
+  CollectionIcon,
+  FireIcon,
 } from '../components/Icons';
 
 export const Icons = {
@@ -40,4 +43,7 @@ export const Icons = {
   chatBubble: ChatBubbleIcon,
   video: VideoIcon,
   eye: EyeIcon,
+  chevronRight: ChevronRightIcon,
+  collection: CollectionIcon,
+  fire: FireIcon,
 };

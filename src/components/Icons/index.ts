@@ -17,3 +17,6 @@ export { default as HeartIcon } from './Heart';
 export { default as ChatBubbleIcon } from './ChatBubble';
 export { default as VideoIcon } from './Video';
 export { default as EyeIcon } from './Eye';
+export { default as ChevronRightIcon } from './ChevronRight';
+export { default as CollectionIcon } from './Collection';
+export { default as FireIcon } from './Fire';

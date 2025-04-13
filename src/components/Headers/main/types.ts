@@ -36,4 +36,6 @@ export type MainHeaderProps = {
   logoText?: string;
   userPhotoSrc?: string;
   userPhotoAlt?: string;
+  userName?: string;
+  userEmail?: string;
 };
