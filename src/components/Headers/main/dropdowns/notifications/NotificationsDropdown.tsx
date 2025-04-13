@@ -1,12 +1,9 @@
 import { memo } from 'react';
-import {
-  DropdownHeader,
-  DropdownFooter,
-} from '../../../../components/Dropdown';
-import HeaderDropdown from '../HeaderDropdown';
-import { DropdownProps } from '../types';
-import { NotificationItem, notificationItems } from './notifications';
-import IconWrapper from '../../../IconWrapper/IconWrapper';
+import { DropdownHeader, DropdownFooter } from '../../../../Dropdown';
+import HeaderDropdown from '../../HeaderDropdown';
+import { DropdownProps } from '../../types';
+import { NotificationItem, notificationItems } from '.';
+import IconWrapper from '../../../../IconWrapper/IconWrapper';
 
 /**
  * Notifications dropdown component
