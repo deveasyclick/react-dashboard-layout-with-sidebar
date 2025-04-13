@@ -1,71 +1,12 @@
-import { memo, useCallback, useState } from 'react';
-import Button from '../../Button/Button';
-import AppsDropdown from './dropdowns/apps/AppsDropdown';
-import NotificationsDropdown from './dropdowns/notifications/NotificationsDropdown';
+import { useCallback, useState } from 'react';
+import AppsDropdown from './dropdowns/Apps/AppsDropdown';
+import NotificationsDropdown from './dropdowns/Notifications/NotificationsDropdown';
 import UserMenuDropdown from './dropdowns/UserMenu/UserMenuDropdown';
 import IconWrapper from '../../IconWrapper/IconWrapper';
-import IconInput from '../../Input/IconInput';
-import { HeaderButtonProps, LogoProps, MainHeaderProps } from './types';
-
-/**
- * Logo component for the main header
- */
-const Logo = memo(
-  ({
-    imageSrc = 'https://flowbite.s3.amazonaws.com/logo.svg',
-    imageAlt = 'Flowbite Logo',
-    text = 'Flowbite',
-  }: LogoProps) => (
-    <a href="#" className="flex items-center justify-between mr-4">
-      <img src={imageSrc} className="mr-3 h-8" alt={imageAlt} />
-      <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-        {text}
-      </span>
-    </a>
-  ),
-);
-
-/**
- * Search form component for the main header
- */
-const SearchForm = memo(() => (
-  <form action="#" method="GET" className="hidden md:block md:pl-2">
-    <label htmlFor="topbar-search" className="sr-only">
-      Search
-    </label>
-    <IconInput
-      iconName="search"
-      name="search"
-      placeholder="Search"
-      type="text"
-      id="topbar-search"
-    />
-  </form>
-));
-
-/**
- * Header button component with icon
- */
-const HeaderButton = memo(
-  ({
-    ariaControls,
-    ariaExpanded,
-    onClick,
-    children,
-    className = '',
-    id,
-  }: HeaderButtonProps) => (
-    <Button
-      aria-controls={ariaControls}
-      aria-expanded={ariaExpanded}
-      aria-haspopup="true"
-      onClick={onClick}
-      className={className}
-      id={id}>
-      {children}
-    </Button>
-  ),
-);
+import { MainHeaderProps } from './types';
+import Logo from './Logo';
+import SearchForm from './SearchForm';
+import HeaderButton from './HeaderButton';
 
 /**
  * Main header component for the application
