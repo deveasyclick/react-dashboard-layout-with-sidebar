@@ -2,7 +2,7 @@ import { memo, useCallback, useState } from 'react';
 import Button from '../../Button/Button';
 import AppsDropdown from './dropdowns/apps/AppsDropdown';
 import NotificationsDropdown from './dropdowns/notifications/NotificationsDropdown';
-import UserMenuDropdown from './dropdowns/UserMenuDropdown';
+import UserMenuDropdown from './dropdowns/UserMenu/UserMenuDropdown';
 import IconWrapper from '../../IconWrapper/IconWrapper';
 import IconInput from '../../Input/IconInput';
 import { HeaderButtonProps, LogoProps, MainHeaderProps } from './types';
@@ -78,6 +78,12 @@ const MainHeader = ({
   userPhotoAlt = 'user photo',
   userName = 'Michael Gough',
   userEmail = 'michael@example.com',
+  onProfileClick,
+  onSettingsClick,
+  onLikesClick,
+  onCollectionsClick,
+  onProVersionClick,
+  onSignOut,
 }: MainHeaderProps = {}) => {
   // State for tracking which dropdown is open
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -169,6 +175,13 @@ const MainHeader = ({
             onClose={closeDropdown}
             userName={userName}
             userEmail={userEmail}
+            userAvatarUrl={userPhotoSrc}
+            onProfileClick={onProfileClick}
+            onSettingsClick={onSettingsClick}
+            onLikesClick={onLikesClick}
+            onCollectionsClick={onCollectionsClick}
+            onProVersionClick={onProVersionClick}
+            onSignOut={onSignOut}
           />
         </section>
       </div>

@@ -38,4 +38,10 @@ export type MainHeaderProps = {
   userPhotoAlt?: string;
   userName?: string;
   userEmail?: string;
+  onProfileClick?: () => void;
+  onSettingsClick?: () => void;
+  onLikesClick?: () => void;
+  onCollectionsClick?: () => void;
+  onProVersionClick?: () => void;
+  onSignOut?: () => void;
 };
