@@ -12,6 +12,12 @@ import {
   BucketIcon,
   DollarCircleIcon,
   LogoutIcon,
+  MessageDownloadIcon,
+  UserAddIcon,
+  HeartIcon,
+  ChatBubbleIcon,
+  VideoIcon,
+  EyeIcon,
 } from '../components/Icons';
 
 export const Icons = {
@@ -28,4 +34,10 @@ export const Icons = {
   bucket: BucketIcon,
   dollarCircle: DollarCircleIcon,
   logout: LogoutIcon,
+  messageDownload: MessageDownloadIcon,
+  userAdd: UserAddIcon,
+  heart: HeartIcon,
+  chatBubble: ChatBubbleIcon,
+  video: VideoIcon,
+  eye: EyeIcon,
 };
