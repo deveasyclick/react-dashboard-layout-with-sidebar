@@ -3,7 +3,7 @@ import { IconProps } from '../../../types';
 /**
  * Users icon for app dropdown
  */
-const UsersIcon: React.FC<IconProps> = (props) => (
+const UserCircleIcon: React.FC<IconProps> = (props) => (
   <svg
     aria-hidden="true"
     fill="currentColor"
@@ -14,4 +14,4 @@ const UsersIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
-export default UsersIcon;
+export default UserCircleIcon;

@@ -3,7 +3,7 @@ import { IconProps } from '../../../types';
 /**
  * Products icon for app dropdown
  */
-const ProductsIcon: React.FC<IconProps> = (props) => (
+const BucketIcon: React.FC<IconProps> = (props) => (
   <svg
     aria-hidden="true"
     fill="currentColor"
@@ -18,4 +18,4 @@ const ProductsIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
-export default ProductsIcon;
+export default BucketIcon;

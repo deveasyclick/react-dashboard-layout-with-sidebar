@@ -1,14 +1,11 @@
-// App Icons
-export { default as SalesIcon } from './Sales';
-export { default as UsersIcon } from './Users';
+export { default as ShoppingBagIcon } from './ShoppingBag';
+export { default as UserCircleIcon } from './UserCircle';
 export { default as InboxIcon } from './Inbox';
 export { default as ProfileIcon } from './Profile';
 export { default as SettingsIcon } from './Settings';
-export { default as ProductsIcon } from './Products';
-export { default as PricingIcon } from './Pricing';
+export { default as BucketIcon } from './Bucket';
+export { default as DollarCircleIcon } from './DollarCircle';
 export { default as LogoutIcon } from './Logout';
-
-// Header Icons
 export { default as AppMenuIcon } from './AppMenu';
 export { default as BellIcon } from './Bell';
 export { default as CancelIcon } from './Cancel';

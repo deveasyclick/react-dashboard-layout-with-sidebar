@@ -18,13 +18,13 @@ export const appItems: AppItemData[] = [
     id: 'sales',
     title: 'Sales',
     href: '#',
-    iconName: 'sales',
+    iconName: 'shoppingBag',
   },
   {
     id: 'users',
     title: 'Users',
     href: '#',
-    iconName: 'users',
+    iconName: 'userCircle',
   },
   {
     id: 'inbox',
@@ -48,13 +48,13 @@ export const appItems: AppItemData[] = [
     id: 'products',
     title: 'Products',
     href: '#',
-    iconName: 'products',
+    iconName: 'bucket',
   },
   {
     id: 'pricing',
     title: 'Pricing',
     href: '#',
-    iconName: 'pricing',
+    iconName: 'dollarCircle',
   },
   {
     id: 'logout',

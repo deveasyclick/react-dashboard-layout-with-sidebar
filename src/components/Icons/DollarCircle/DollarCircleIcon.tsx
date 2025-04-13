@@ -3,7 +3,7 @@ import { IconProps } from '../../../types';
 /**
  * Pricing icon for app dropdown
  */
-const PricingIcon: React.FC<IconProps> = (props) => (
+const DollarCircleIcon: React.FC<IconProps> = (props) => (
   <svg
     aria-hidden="true"
     fill="currentColor"
@@ -18,4 +18,4 @@ const PricingIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
-export default PricingIcon;
+export default DollarCircleIcon;
