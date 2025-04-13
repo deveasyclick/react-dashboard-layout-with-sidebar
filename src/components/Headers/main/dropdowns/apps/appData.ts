@@ -1,4 +1,4 @@
-import type { IconNames } from '../../../../types';
+import type { IconNames } from '../../../../../types';
 
 /**
  * Type definition for app items in the apps dropdown

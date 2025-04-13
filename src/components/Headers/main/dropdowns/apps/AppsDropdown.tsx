@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { DropdownHeader } from '../../../../components/Dropdown';
-import HeaderDropdown from '../HeaderDropdown';
-import { DropdownProps } from '../types';
+import { DropdownHeader } from '../../../../Dropdown';
+import HeaderDropdown from '../../HeaderDropdown';
+import { DropdownProps } from '../../types';
 import AppItem from './AppItem';
 import { appItems } from './appData';
 

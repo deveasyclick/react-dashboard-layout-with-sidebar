@@ -1,6 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import Button from '../../Button/Button';
-import AppsDropdown from './dropdowns/AppsDropdown';
+import AppsDropdown from './dropdowns/apps/AppsDropdown';
 import NotificationsDropdown from './dropdowns/NotificationsDropdown';
 import UserMenuDropdown from './dropdowns/UserMenuDropdown';
 import IconWrapper from '../../IconWrapper/IconWrapper';
