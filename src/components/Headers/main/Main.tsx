@@ -7,6 +7,7 @@ import { MainHeaderProps } from './types';
 import Logo from './Logo';
 import SearchForm from './SearchForm';
 import HeaderButton from './HeaderButton';
+import { useSidebar } from '../../../contexts/SidebarContext';
 
 /**
  * Main header component for the application
@@ -26,6 +27,9 @@ const MainHeader = ({
   onProVersionClick,
   onSignOut,
 }: MainHeaderProps = {}) => {
+  // Get sidebar context
+  const { toggleSidebar, isSidebarOpen } = useSidebar();
+
   // State for tracking which dropdown is open
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
@@ -61,9 +65,20 @@ const MainHeader = ({
     <nav className="bg-white border-b border-gray-200 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
       <div className="flex flex-wrap justify-between items-center">
         <section className="flex justify-start items-center">
-          <HeaderButton ariaControls="sidebar" className="md:hidden">
-            <IconWrapper name="menu" />
-            <IconWrapper name="cancel" aria-hidden="true" className="hidden" />
+          <HeaderButton
+            id="sidebar-toggle-button"
+            ariaControls="sidebar"
+            className="md:hidden"
+            onClick={toggleSidebar}
+            ariaExpanded={isSidebarOpen}>
+            <IconWrapper
+              name="menu"
+              className={isSidebarOpen ? 'hidden' : ''}
+            />
+            <IconWrapper
+              name="cancel"
+              className={isSidebarOpen ? '' : 'hidden'}
+            />
             <span className="sr-only">Toggle sidebar</span>
           </HeaderButton>
           <Logo imageSrc={logoSrc} imageAlt={logoAlt} text={logoText} />

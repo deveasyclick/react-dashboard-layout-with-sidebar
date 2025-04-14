@@ -1,14 +1,14 @@
 import { useEffect, RefObject } from 'react';
 
 /**
- * Custom hook to detect clicks outside of a specified element
+ * Custom hook to detect clicks outside of specified elements
  *
- * @param ref - Reference to the element to detect clicks outside of
+ * @param refs - Reference or array of references to elements to detect clicks outside of
  * @param callback - Function to call when a click outside is detected
  * @param enabled - Whether the hook should be active (defaults to true)
  */
 const useClickOutside = <T extends HTMLElement = HTMLElement>(
-  ref: RefObject<T | null>,
+  refs: RefObject<T | null> | RefObject<T | null>[],
   callback: () => void,
   enabled: boolean = true,
 ): void => {
@@ -16,7 +16,17 @@ const useClickOutside = <T extends HTMLElement = HTMLElement>(
     if (!enabled) return;
 
     const handleClickOutside = (event: MouseEvent) => {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+
+      // Convert single ref to array for consistent handling
+      const refsArray = Array.isArray(refs) ? refs : [refs];
+
+      // Check if the click was outside all of the provided refs
+      const isOutside = refsArray.every(
+        (ref) => !ref.current || !ref.current.contains(target),
+      );
+
+      if (isOutside) {
         callback();
       }
     };
@@ -26,7 +36,7 @@ const useClickOutside = <T extends HTMLElement = HTMLElement>(
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [ref, callback, enabled]);
+  }, [refs, callback, enabled]);
 };
 
 export default useClickOutside;
