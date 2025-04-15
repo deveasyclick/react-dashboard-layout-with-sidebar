@@ -1,16 +1,16 @@
 import { memo } from 'react';
 import { LogoProps } from './types';
 import Image from '../../Image';
-import { EXTERNAL_IMAGES } from '../../../constants/images';
+import { DEFAULT_IMAGES } from '../../../constants/images';
 
 /**
  * Logo component for the main header
  */
 const Logo = memo(
   ({
-    imageSrc = EXTERNAL_IMAGES.DEFAULT_LOGO,
-    imageAlt = 'Alyusroh Logo',
-    text = 'Alyusroh',
+    imageSrc = DEFAULT_IMAGES.LOGO,
+    imageAlt = 'React Tailwind Dashboard With Sidebar ',
+    text = 'Dashboard',
   }: LogoProps) => (
     <a href="#" className="flex items-center justify-between mr-4">
       <Image

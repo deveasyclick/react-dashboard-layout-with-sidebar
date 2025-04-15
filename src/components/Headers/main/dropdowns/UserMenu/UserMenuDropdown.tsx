@@ -26,7 +26,7 @@ const UserMenuDropdown = memo(
     isOpen,
     onClose,
     userName = 'Neil Sims',
-    userEmail = 'name@flowbite.com',
+    userEmail = 'name@test.com',
     userAvatarUrl,
     onProfileClick,
     onSettingsClick,
