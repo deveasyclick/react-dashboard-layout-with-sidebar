@@ -1,28 +1,10 @@
-# Alyusroh Admin Portal
+# React Tailwind Dashboard Layout
 
 ## Overview
 
-The Alyusroh Admin Portal is a web application designed for administrators to manage members and their financial data. This application provides a comprehensive interface for handling member information, loans, shares, balances, and other financial records within the Alyusroh organization.
+A modern, responsive dashboard layout built with React 19, TypeScript, and Tailwind CSS 4. This project provides a ready-to-use dashboard template with a collapsible sidebar, responsive header, and a clean, professional design.
 
-## Features
-
-### Member Management
-- Import members from external sources
-- Add new members manually
-- Edit member information
-- Delete members
-- Search and filter members
-
-### Financial Data Management
-- View and manage member loans
-- Track member shares
-- Monitor member account balances
-- Generate financial reports
-
-### Authentication & Security
-- Secure admin login using Clerk authentication
-- Role-based access control
-- Data encryption for sensitive information
+This template is perfect for building admin panels, dashboards, and other web applications that require a structured layout with navigation.
 
 ## Technology Stack
 
@@ -35,30 +17,29 @@ The Alyusroh Admin Portal is a web application designed for administrators to ma
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
+
 - Node.js (v22.0.0 or higher, recommended v22.11.0)
 - npm (v11.0.0 or higher, recommended v11.2.0) or yarn
 
 ## Installation
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/your-username/alyusroh-admin.git
-   cd alyusroh-admin
+   git clone https://github.com/yourusername/react-dashboard-layout-with-sidebar.git
+   cd react-dashboard-layout-with-sidebar
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    # or
    yarn
    ```
 
-3. Create a `.env` file in the root directory with the following variables:
-   ```
-   VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-   ```
+3. Start the development server:
 
-4. Start the development server:
    ```bash
    npm run dev
    # or
@@ -67,8 +48,8 @@ Before you begin, ensure you have the following installed:
 
 ## Project Structure
 
-```
-alyusroh-admin/
+```plaintext
+react-tailwind-dashboard-layout/
 ├── public/              # Static assets
 │   ├── placeholder.svg  # Default placeholder image
 │   └── user-avatar-placeholder.svg # User avatar placeholder
@@ -80,22 +61,27 @@ alyusroh-admin/
 │   │       ├── icons/         # Custom icon images
 │   │       └── logos/         # Logo variations
 │   ├── components/      # Reusable UI components
+│   │   ├── Dropdown/    # Dropdown components
+│   │   ├── Headers/     # Header components
+│   │   │   └── main/    # Main header with dropdowns
+│   │   ├── IconWrapper/ # Icon component wrapper
 │   │   ├── Image/       # Image components
-│   │   │   ├── Image.tsx           # Basic image component
-│   │   │   ├── ImageWithFallback.tsx # Advanced image component
-│   │   │   └── index.ts           # Component exports
-│   │   └── ... other components
+│   │   ├── MainContent/ # Main content area
+│   │   └── Sidebar/     # Sidebar components
 │   ├── constants/       # Application constants
-│   │   ├── images.ts    # Image path constants
-│   │   └── ... other constants
+│   ├── contexts/        # React contexts
+│   │   └── SidebarContext.tsx # Sidebar state management
 │   ├── hooks/           # Custom React hooks
+│   │   ├── useEscapeKey.ts    # Keyboard event handling
+│   │   ├── useFocusEffect.ts  # Focus management
+│   │   ├── useMediaQuery.ts   # Responsive design
+│   │   └── useSidebarClickOutside.ts # Click outside detection
 │   ├── layouts/         # Page layouts
 │   ├── pages/           # Application pages
+│   │   └── dashboard/   # Dashboard page
 │   ├── routes/          # Routing configuration
 │   ├── types/           # TypeScript type definitions
 │   ├── utils/           # Utility functions
-│   │   ├── imageUtils.ts # Image utility functions
-│   │   └── ... other utilities
 │   ├── index.css        # Global styles
 │   └── main.tsx         # Application entry point
 ├── .env                 # Environment variables
@@ -107,53 +93,88 @@ alyusroh-admin/
 
 ## Usage
 
-### Authentication
+The dashboard layout consists of three main components:
 
-The application uses Clerk for authentication. Administrators need to sign in with their credentials to access the admin portal.
+### 1. Main Header
 
-### Member Management
+The header includes:
 
-1. **Importing Members**:
-   - Navigate to the Members section
-   - Click on "Import Members"
-   - Upload a CSV file with member data
-   - Review and confirm the import
+- Logo and brand text
+- Search functionality
+- Notification dropdown
+- Apps dropdown
+- User menu with profile options
 
-2. **Adding Members Manually**:
-   - Navigate to the Members section
-   - Click on "Add Member"
-   - Fill in the required information
-   - Save the new member
+```tsx
+<MainHeader
+  logoSrc="/path/to/logo.svg"
+  logoText="Dashboard"
+  userName="John Doe"
+  userEmail="john@example.com"
+  onProfileClick={() => console.log('Profile clicked')}
+  onSettingsClick={() => console.log('Settings clicked')}
+  onSignOut={() => console.log('Sign out clicked')}
+/>
+```
 
-3. **Editing Members**:
-   - Find the member in the members list
-   - Click on the edit icon
-   - Update the information
-   - Save changes
+### 2. Sidebar Navigation
 
-4. **Deleting Members**:
-   - Find the member in the members list
-   - Click on the delete icon
-   - Confirm deletion
+The sidebar includes:
 
-### Financial Data Management
+- Responsive design (collapses on mobile)
+- Search functionality
+- Navigation menu with icons
+- Badge support for menu items
 
-1. **Viewing Member Financial Data**:
-   - Select a member from the members list
-   - Navigate to the Financial tab
-   - View loans, shares, and balance information
+The sidebar automatically handles:
 
-2. **Managing Loans**:
-   - Add new loans
-   - Update loan status
-   - View loan history
+- Mobile responsiveness with overlay
+- Keyboard navigation and accessibility
+- Click outside to close on mobile
 
-3. **Managing Shares**:
-   - Add new shares
-   - Update share values
-   - View share history
+### 3. Main Content Area
+
+A flexible content area that adjusts based on sidebar state:
+
+```tsx
+<MainContent>
+  {/* Your page content goes here */}
+</MainContent>
+```
+
+### Complete Example
+
+```tsx
+import { SidebarProvider } from './contexts/SidebarContext';
+import MainHeader from './components/Headers/main/Main';
+import Sidebar from './components/Sidebar/Sidebar';
+import MainContent from './components/MainContent/MainContent';
+
+function App() {
+  return (
+    <SidebarProvider>
+      <div className="antialiased bg-gray-50 dark:bg-gray-900">
+        <MainHeader userName="John Doe" userEmail="john@example.com" />
+        <Sidebar />
+        <MainContent>
+          {/* Your page content */}
+        </MainContent>
+      </div>
+    </SidebarProvider>
+  );
+}
+```
 
 ## Development
+
+### Key Features
+
+- **Responsive Design**: Works on all screen sizes with optimized mobile experience
+- **Dark Mode Support**: Built-in dark mode with Tailwind CSS
+- **Accessibility**: ARIA attributes, keyboard navigation, and focus management
+- **TypeScript**: Full type safety throughout the codebase
+- **Modular Components**: Easily customizable and extendable
+- **Image Optimization**: Built-in image optimization with Vite
 
 ### Code Style
 
@@ -189,7 +210,7 @@ yarn preview
 
 ## Image Handling Best Practices
 
-This section outlines the best practices for handling images in the Alyusroh Admin project.
+This section outlines the best practices for handling images in the this project.
 
 ### Image Components
 
@@ -256,7 +277,7 @@ Store local images in the following locations:
 
 Organize images in the assets directory by category:
 
-```
+```plaintext
 src/assets/images/
 ├── avatars/       # User avatars and profile pictures
 ├── backgrounds/   # Background images
@@ -341,7 +362,6 @@ Contributions are welcome! Please follow these steps to contribute:
 5. Push to the branch (`git push origin feature/your-feature-name`)
 6. Open a Pull Request
 
-
 ## Contact
 
-For questions or support, please contact ydeniyi@gmail.com.
+For questions or support, please contact [ydeniyi@gmail.com](mailto:ydeniyi@gmail.com).
