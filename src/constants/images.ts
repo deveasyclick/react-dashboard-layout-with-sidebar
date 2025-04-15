@@ -16,8 +16,8 @@ export const IMAGE_PATHS = {
 };
 
 export const EXTERNAL_IMAGES = {
-  DEFAULT_AVATAR: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png',
-  DEFAULT_LOGO: 'https://flowbite.s3.amazonaws.com/logo.svg',
+  DEFAULT_AVATAR:
+    'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png',
 };
 
 /**
