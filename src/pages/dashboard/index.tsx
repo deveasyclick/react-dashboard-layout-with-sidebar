@@ -28,8 +28,8 @@ export default function Dashboard() {
           onProfileClick={handleProfileClick}
           onSettingsClick={handleSettingsClick}
           onSignOut={handleSignOut}
-          userName="Yusuf Alyusroh"
-          userEmail="admin@alyusroh.org"
+          userName="John Doe"
+          userEmail="admin@dashboard.org"
         />
         <Sidebar />
         <MainContent />

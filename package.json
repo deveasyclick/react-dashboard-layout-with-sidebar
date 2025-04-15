@@ -1,5 +1,5 @@
 {
-  "name": "alyusroh-admin",
+  "name": "react-tailwind-dashboard-layout",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@clerk/clerk-react": "^5.26.0",
     "@tailwindcss/vite": "^4.1.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
