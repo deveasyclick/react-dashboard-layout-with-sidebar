@@ -1,10 +1,10 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useMemo } from 'react';
 
 type KeyHandler = (event: KeyboardEvent) => void;
 
 /**
  * Custom hook to handle keyboard events
- * 
+ *
  * @param key - The key to listen for (e.g., 'Escape', 'Enter')
  * @param handler - The callback function to execute when the key is pressed
  * @param options - Additional options
@@ -19,16 +19,14 @@ export function useKeyPress(
     enabled?: boolean;
     target?: EventTarget;
     event?: 'keydown' | 'keyup' | 'keypress';
-  } = {}
+  } = {},
 ): void {
-  const {
-    enabled = true,
-    target = document,
-    event = 'keydown'
-  } = options;
+  const { enabled = true, target = document, event = 'keydown' } = options;
 
-  // Convert key to array for consistent handling
-  const keys = Array.isArray(key) ? key : [key];
+  // Memoize the keys array to prevent it from changing on every render
+  const keys = useMemo(() => {
+    return Array.isArray(key) ? key : [key];
+  }, [key]);
 
   // Memoize the handler to prevent unnecessary re-renders
   const memoizedHandler = useCallback(
@@ -37,7 +35,7 @@ export function useKeyPress(
         handler(event);
       }
     },
-    [keys, handler]
+    [keys, handler],
   );
 
   useEffect(() => {
@@ -55,11 +53,14 @@ export function useKeyPress(
 
 /**
  * Custom hook to handle Escape key press
- * 
+ *
  * @param handler - The callback function to execute when Escape is pressed
  * @param enabled - Whether the hook is enabled
  */
-export function useEscapeKey(handler: KeyHandler, enabled: boolean = true): void {
+export function useEscapeKey(
+  handler: KeyHandler,
+  enabled: boolean = true,
+): void {
   useKeyPress('Escape', handler, { enabled });
 }
 
