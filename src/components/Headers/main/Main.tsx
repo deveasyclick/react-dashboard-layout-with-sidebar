@@ -8,6 +8,7 @@ import Logo from './Logo';
 import SearchForm from './SearchForm';
 import HeaderButton from './HeaderButton';
 import { useSidebar } from '../../../contexts/SidebarContext';
+import ThemeToggle from '../../ThemeToggle';
 
 /**
  * Main header component for the application
@@ -89,6 +90,8 @@ const MainHeader = ({
             <span className="sr-only">Toggle search</span>
             <IconWrapper name="search" aria-hidden="true" />
           </HeaderButton>
+
+          <ThemeToggle className="mr-2" />
 
           <HeaderButton
             ariaControls="notification-dropdown"

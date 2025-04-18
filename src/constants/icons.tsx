@@ -21,6 +21,8 @@ import {
   ChevronRightIcon,
   CollectionIcon,
   FireIcon,
+  SunIcon,
+  MoonIcon,
 } from '../components/Icons';
 
 export const Icons = {
@@ -46,4 +48,6 @@ export const Icons = {
   chevronRight: ChevronRightIcon,
   collection: CollectionIcon,
   fire: FireIcon,
+  sun: SunIcon,
+  moon: MoonIcon,
 };
