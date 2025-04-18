@@ -1,6 +1,8 @@
 import { memo } from 'react';
 import { DropdownHeader } from '../../../../Dropdown';
 import HeaderDropdown from '../../HeaderDropdown';
+import Image from '../../../../Image';
+import { DEFAULT_IMAGES } from '../../../../../constants/images';
 import { DropdownProps } from '../../types';
 import { MenuItem, getDefaultMenuSections, UserMenuCallbacks } from './index';
 
@@ -56,10 +58,12 @@ const UserMenuDropdown = memo(
         <div className="py-3 px-4" role="presentation">
           {userAvatarUrl && (
             <div className="flex items-center mb-3">
-              <img
+              <Image
                 className="w-10 h-10 rounded-full mr-2"
                 src={userAvatarUrl}
                 alt={`${userName}'s avatar`}
+                fallbackSrc={DEFAULT_IMAGES.USER_AVATAR}
+                objectFit="cover"
               />
             </div>
           )}
