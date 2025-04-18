@@ -20,7 +20,7 @@ const Logo = memo(
         fallbackSrc="/placeholder.svg"
         objectFit="contain"
       />
-      <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+      <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white hidden sm:inline-block">
         {text}
       </span>
     </a>
