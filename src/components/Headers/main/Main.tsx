@@ -3,6 +3,8 @@ import AppsDropdown from './dropdowns/Apps/AppsDropdown';
 import NotificationsDropdown from './dropdowns/Notifications/NotificationsDropdown';
 import UserMenuDropdown from './dropdowns/UserMenu/UserMenuDropdown';
 import IconWrapper from '../../IconWrapper/IconWrapper';
+import Image from '../../Image';
+import { DEFAULT_IMAGES } from '../../../constants/images';
 import { MainHeaderProps } from './types';
 import Logo from './Logo';
 import SearchForm from './SearchForm';
@@ -123,10 +125,12 @@ const MainHeader = ({
             onClick={handleToggleUserMenu}
             id="user-menu-button">
             <span className="sr-only">Open user menu</span>
-            <img
+            <Image
               className="w-8 h-8 rounded-full"
               src={userPhotoSrc}
               alt={userPhotoAlt}
+              fallbackSrc={DEFAULT_IMAGES.USER_AVATAR}
+              objectFit="cover"
             />
           </HeaderButton>
           <UserMenuDropdown
