@@ -20,3 +20,5 @@ export { default as EyeIcon } from './Eye';
 export { default as ChevronRightIcon } from './ChevronRight';
 export { default as CollectionIcon } from './Collection';
 export { default as FireIcon } from './Fire';
+export { default as SunIcon } from './Sun';
+export { default as MoonIcon } from './Moon';
